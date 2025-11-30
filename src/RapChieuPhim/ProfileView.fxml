@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RapChieuPhim.ProfileController">
+
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 20; -fx-background-color: #121212;">
+         <children>
+            <Button onAction="#goHomeAction" style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-cursor: hand;" text="❮" textFill="WHITE" />
+            <Label text="Thông Tin Cá Nhân" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+
+   <center>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: #121212; -fx-background-color: transparent;" vbarPolicy="NEVER">
+         <content>
+            <VBox alignment="TOP_CENTER" spacing="30.0" style="-fx-padding: 20 100 50 100;">
+               <children>
+
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Circle fill="#2b2b2b" radius="50.0" stroke="#e50914" strokeWidth="3.0" />
+                              <Label text="AD" textFill="WHITE" translateX="-65.0">
+                                 <font>
+                                    <Font name="System Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="65.0" />
+                           </padding>
+                        </HBox>
+                        
+                        <Label text="Admin User" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        
+                        <Label style="-fx-background-color: linear-gradient(to right, #FFD700, #FFA500); -fx-background-radius: 15; -fx-padding: 5 15;" text="👑 Gold Member" textFill="#333333">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+
+                        <HBox alignment="CENTER" spacing="40.0" style="-fx-padding: 15 0 0 0;">
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <Label text="0" textFill="WHITE"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                 <Label text="Vé đã mua" textFill="#888888" />
+                              </VBox>
+                              <Separator orientation="VERTICAL" />
+                              <VBox alignment="CENTER">
+                                 <Label text="0" textFill="#e50914"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                 <Label text="Điểm tích lũy" textFill="#888888" />
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <Separator opacity="0.2" />
+
+                  <VBox spacing="15.0" maxWidth="600.0">
+                     <children>
+                        <Label text="Thông tin cơ bản" textFill="#e50914">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+
+                        <HBox spacing="20.0">
+                           <children>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <Label text="Họ" textFill="#aaaaaa" />
+                                 <TextField fx:id="txtHo" promptText="Nguyễn" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                              </VBox>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <Label text="Tên" textFill="#aaaaaa" />
+                                 <TextField fx:id="txtTen" promptText="Văn A" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <VBox spacing="5.0">
+                           <Label text="Email" textFill="#aaaaaa" />
+                           <TextField fx:id="txtEmail" promptText="admin@dut.udn.vn" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                        </VBox>
+                        
+                        <VBox spacing="5.0">
+                           <Label text="Số điện thoại" textFill="#aaaaaa" />
+                           <TextField fx:id="txtPhone" promptText="0905 xxx xxx" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                        </VBox>
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="15.0" maxWidth="600.0">
+                     <children>
+                        <Label text="Bảo mật" textFill="#e50914">
+                           <font><Font name="System Bold" size="16.0" /></font>
+                        </Label>
+
+                        <VBox spacing="5.0">
+                           <Label text="Mật khẩu hiện tại" textFill="#aaaaaa" />
+                           <PasswordField fx:id="txtOldPass" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                        </VBox>
+                        
+                         <HBox spacing="20.0">
+                           <children>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <Label text="Mật khẩu mới" textFill="#aaaaaa" />
+                                 <PasswordField fx:id="txtNewPass" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                              </VBox>
+                              <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                 <Label text="Nhập lại mật khẩu" textFill="#aaaaaa" />
+                                 <PasswordField fx:id="txtConfirmPass" style="-fx-background-color: #2B2B2B; -fx-text-fill: white; -fx-padding: 10;" />
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+
+                  <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 20 0;">
+                     <children>
+                        <Button onAction="#handleLogout" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #666; -fx-border-radius: 5; -fx-text-fill: #aaaaaa; -fx-cursor: hand;" text="Đăng xuất" />
+                        <Button onAction="#handleSave" prefWidth="150.0" style="-fx-background-color: #E50914; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Lưu thay đổi" />
+                     </children>
+                  </HBox>
+
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+
+   <bottom>
+      <HBox alignment="CENTER" spacing="50.0" style="-fx-background-color: #000000; -fx-padding: 15 0; -fx-border-color: #333; -fx-border-width: 1 0 0 0;">
+         <children>
+            <VBox onMouseClicked="#goHome" alignment="CENTER" spacing="5.0" style="-fx-cursor: hand;">
+               <Label text="🏠" textFill="#666666" style="-fx-font-size: 20px;" />
+               <Label text="Trang chủ" textFill="#666666"><font><Font size="10.0" /></font></Label>
+            </VBox>
+            
+            <VBox onMouseClicked="#goMovies" alignment="CENTER" spacing="5.0" style="-fx-cursor: hand;">
+               <Label text="🎬" textFill="#666666" style="-fx-font-size: 20px;" />
+               <Label text="Phim" textFill="#666666"><font><Font size="10.0" /></font></Label>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="5.0" style="-fx-cursor: hand;">
+               <Label text="🎟️" textFill="#666666" style="-fx-font-size: 20px;" />
+               <Label text="Vé của tôi" textFill="#666666"><font><Font size="10.0" /></font></Label>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="5.0" style="-fx-cursor: hand;">
+               <Label text="👤" textFill="#E50914" style="-fx-font-size: 20px;" />
+               <Label text="Cá nhân" textFill="#E50914"><font><Font size="10.0" /></font></Label>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+
+</BorderPane>
