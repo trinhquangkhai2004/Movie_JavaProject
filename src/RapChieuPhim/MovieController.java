@@ -28,6 +28,25 @@ public class MovieController extends BaseController{
 //        }
 //    }
 	
+	
+	@FXML
+	public void bookMovie(MouseEvent event) {
+	    try {
+	        // Đổi đường dẫn thành MovieDetailView.fxml
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("MovieDetailView.fxml"));
+	        Parent root = loader.load();
+	        
+	        // Truyền tên phim (Giả sử bạn lấy được tên phim)
+	        MovieDetailController controller = loader.getController();
+	        controller.setMovieData("Dune: Part Two"); 
+	        
+	        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	        stage.setScene(new Scene(root));
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
 	@FXML
 	public void goToProfile(MouseEvent event) {
 	    try {
@@ -35,6 +54,19 @@ public class MovieController extends BaseController{
 	        Parent root = loader.load();
 	        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	        stage.setScene(new Scene(root));
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	@FXML
+	public void goToMyTickets(MouseEvent event) {
+	    try {
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("MyTicketView.fxml"));
+	        Parent root = loader.load();
+	      
+	        javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+	        stage.setScene(new javafx.scene.Scene(root));
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }

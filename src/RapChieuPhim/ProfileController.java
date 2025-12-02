@@ -62,15 +62,24 @@ public class ProfileController extends BaseController{
         switchScene(event, "HomeView.fxml");
     }
 
-    // 2. Hàm dành riêng cho icon Home ở dưới (Mouse Event)
-//    @FXML
-//    public void goHomeMouse(MouseEvent event) {
-//        switchScene(event, "HomeView.fxml");
-//    }
+    
     
     @FXML
     public void goMovies(MouseEvent event) {
         switchScene(event, "MoviesView.fxml");
+    }
+    
+    @FXML
+    public void goToMyTickets(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MyTicketView.fxml"));
+            Parent root = loader.load();
+            
+            javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Hàm chuyển cảnh đa năng (nhận cả MouseEvent và ActionEvent)

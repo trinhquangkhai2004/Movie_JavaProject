@@ -112,4 +112,17 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+    
+    @FXML
+    public void goToMyTickets(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MyTicketView.fxml"));
+            Parent root = loader.load();
+            
+            javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

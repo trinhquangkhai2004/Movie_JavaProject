@@ -210,22 +210,22 @@
 					</Label>
 				</VBox>
 
-				<VBox alignment="CENTER" spacing="5.0"
-					style="-fx-cursor: hand;">
-					<Label text="🎟️" textFill="#666666"
+				<VBox onMouseClicked="#goToProfile" alignment="CENTER"
+					spacing="5.0" style="-fx-cursor: hand;">
+					<Label text="👤" textFill="#666666"
 						style="-fx-font-size: 20px;" />
-					<Label text="Vé của tôi" textFill="#666666">
+					<Label text="Cá nhân" textFill="#666666">
 						<font>
 							<Font size="10.0" />
 						</font>
 					</Label>
 				</VBox>
 
-				<VBox onMouseClicked="#goToProfile" alignment="CENTER"
+				<VBox onMouseClicked="#goToMyTickets" alignment="CENTER"
 					spacing="5.0" style="-fx-cursor: hand;">
-					<Label text="👤" textFill="#666666"
+					<Label text="🎟️" textFill="#666666"
 						style="-fx-font-size: 20px;" />
-					<Label text="Cá nhân" textFill="#666666">
+					<Label text="Vé của tôi" textFill="#666666">
 						<font>
 							<Font size="10.0" />
 						</font>
