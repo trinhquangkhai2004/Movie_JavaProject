@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="700.0" prefWidth="900.0"
+	style="-fx-background-color: #180D0E;"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="RapChieuPhim.SignUpController">
+	<children>
+		<VBox alignment="CENTER" maxWidth="450.0" spacing="15.0"
+			style="-fx-padding: 40;">
+			<children>
+
+				<VBox alignment="CENTER" spacing="5.0">
+					<children>
+						<Label text="📝" textFill="#e50914">
+							<font>
+								<Font size="40.0" />
+							</font>
+						</Label>
+						<Label text="Tạo Tài Khoản Mới" textFill="WHITE">
+							<font>
+								<Font name="System Bold" size="26.0" />
+							</font>
+						</Label>
+						<Label text="Tham gia ngay để không bỏ lỡ bom tấn!"
+							textFill="#888888">
+							<font>
+								<Font size="14.0" />
+							</font>
+						</Label>
+					</children>
+					<VBox.margin>
+						<Insets bottom="20.0" />
+					</VBox.margin>
+				</VBox>
+
+				<HBox spacing="10.0">
+					<children>
+						<HBox alignment="CENTER_LEFT" spacing="10.0"
+							style="-fx-background-color: #2F1819; -fx-background-radius: 8; -fx-padding: 5 15;"
+							HBox.hgrow="ALWAYS">
+							<children>
+								<TextField fx:id="txtHo" promptText="Họ"
+									style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666;">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</TextField>
+							</children>
+						</HBox>
+
+						<HBox alignment="CENTER_LEFT" spacing="10.0"
+							style="-fx-background-color: #2F1819; -fx-background-radius: 8; -fx-padding: 5 15;"
+							HBox.hgrow="ALWAYS">
+							<children>
+								<TextField fx:id="txtTen" promptText="Tên"
+									style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666;">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</TextField>
+							</children>
+						</HBox>
+					</children>
+				</HBox>
+
+				<VBox spacing="5.0">
+					<HBox alignment="CENTER_LEFT" spacing="10.0"
+						style="-fx-background-color: #2F1819; -fx-background-radius: 8; -fx-padding: 5 15;">
+						<children>
+							<Label text="🆔" textFill="#999999"
+								style="-fx-font-size: 16px;" />
+							<TextField fx:id="txtUserName"
+								promptText="Tên đăng nhập (Username)"
+								style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666;"
+								HBox.hgrow="ALWAYS">
+								<font>
+									<Font size="14.0" />
+								</font>
+							</TextField>
+						</children>
+					</HBox>
+				</VBox>
+
+				<VBox spacing="5.0">
+					<HBox alignment="CENTER_LEFT" spacing="10.0"
+						style="-fx-background-color: #2F1819; -fx-background-radius: 8; -fx-padding: 5 15;">
+						<children>
+							<Label text="✉️" textFill="#999999"
+								style="-fx-font-size: 16px;" />
+							<TextField fx:id="txtEmail" promptText="Địa chỉ Email"
+								style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666;"
+								HBox.hgrow="ALWAYS">
+								<font>
+									<Font size="14.0" />
+								</font>
+							</TextField>
+						</children>
+					</HBox>
+				</VBox>
+
+				<VBox spacing="5.0">
+					<HBox alignment="CENTER_LEFT" spacing="10.0"
+						style="-fx-background-color: #2F1819; -fx-background-radius: 8; -fx-padding: 5 15;">
+						<children>
+							<Label text="📞" textFill="#999999"
+								style="-fx-font-size: 16px;" />
+							<TextField fx:id="txtPhone" promptText="Số điện thoại"
+								style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666;"
+								HBox.hgrow="ALWAYS">
+								<font>
+									<Font size="14.0" />
+								</font>
+							</TextField>
+						</children>
+					</HBox>
+				</VBox>
+
+				<VBox spacing="5.0">
+					<HBox alignment="CENTER_LEFT" spacing="10.0"
+						style="-fx-background-color: #2F1819; -fx-background-radius: 8; -fx-padding: 5 15;">
+						<children>
+							<Label text="🔒" textFill="#999999"
+								style="-fx-font-size: 16px;" />
+							<PasswordField fx:id="txtPass"
+								promptText="Mật khẩu"
+								style="-fx-background-color: transparent; -fx-text-fill: white; -fx-prompt-text-fill: #666666;"
+								HBox.hgrow="ALWAYS">
+								<font>
+									<Font size="14.0" />
+								</font>
+							</PasswordField>
+						</children>
+					</HBox>
+				</VBox>
+
+				<Button fx:id="btnSignUp" onAction="#handleRegister"
+					maxWidth="Infinity" prefHeight="45.0" text="Đăng Ký Ngay"
+					textFill="WHITE"
+					style="-fx-background-color: #E50914; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 16px; -fx-cursor: hand;">
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</Button>
+
+				<HBox alignment="CENTER" spacing="5.0">
+					<children>
+						<Label text="Đã có tài khoản?" textFill="#888888" />
+						<Label onMouseClicked="#handleBackToLogin" text="Đăng nhập"
+							textFill="WHITE"
+							style="-fx-font-weight: bold; -fx-cursor: hand; -fx-underline: true;" />
+					</children>
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</HBox>
+
+			</children>
+		</VBox>
+	</children>
+</StackPane>

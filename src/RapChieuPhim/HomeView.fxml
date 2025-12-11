@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+	prefWidth="1000.0" style="-fx-background-color: #121212;"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="RapChieuPhim.HomeController">
+
+	<center>
+		<ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+			style="-fx-background: #121212; -fx-background-color: transparent;"
+			vbarPolicy="NEVER">
+			<content>
+				<VBox spacing="20.0"
+					style="-fx-background-color: #121212; -fx-padding: 20;">
+					<children>
+
+						<VBox spacing="15.0">
+							<children>
+								<HBox alignment="CENTER_LEFT" spacing="10.0">
+									<Label text="📍 Đà Nẵng, VN" textFill="#bbbbbb">
+										<font>
+											<Font size="12.0" />
+										</font>
+									</Label>
+									<Region HBox.hgrow="ALWAYS" />
+									<Button
+										style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px;"
+										text="🔔" />
+								</HBox>
+
+								<Label text="Xin chào, Admin" textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="24.0" />
+									</font>
+								</Label>
+
+								<HBox alignment="CENTER_LEFT"
+									style="-fx-background-color: #2B2B2B; -fx-background-radius: 10; -fx-padding: 5 15;">
+									<children>
+										<Label text="🔍" textFill="#888888" />
+										<TextField
+											promptText="Tìm kiếm phim, rạp, diễn viên..."
+											style="-fx-background-color: transparent; -fx-text-fill: white;"
+											HBox.hgrow="ALWAYS" />
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+
+						<VBox spacing="10.0">
+							<children>
+								<Label text="Phim Nổi Bật" textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+
+								<ScrollPane fx:id="scrollPhim" fitToHeight="true"
+									hbarPolicy="NEVER"
+									style="-fx-background-color: transparent; -fx-background: transparent;"
+									vbarPolicy="NEVER">
+									<content>
+										<HBox spacing="15.0">
+											<children>
+												<StackPane fx:id="poster1"
+													onMouseClicked="#handleMovieClick" alignment="BOTTOM_LEFT"
+													prefHeight="200.0" prefWidth="300.0"
+													style="-fx-background-color: linear-gradient(to bottom right, #2c3e50, #4ca1af); -fx-background-radius: 15;">
+													<children>
+														<Region
+															style="-fx-background-color: linear-gradient(to top, rgba(0,0,0,0.9), transparent); -fx-background-radius: 15;" />
+														<VBox spacing="5.0" style="-fx-padding: 15;">
+															<Label text="Phim 1" textFill="WHITE">
+																<font>
+																	<Font name="System Bold" size="16.0" />
+																</font>
+															</Label>
+															<Label text="Mô tả 1" textFill="#cccccc"
+																wrapText="true" />
+														</VBox>
+													</children>
+												</StackPane>
+
+												<StackPane alignment="BOTTOM_LEFT"
+													prefHeight="200.0" prefWidth="300.0"
+													style="-fx-background-color: linear-gradient(to bottom right, #20002c, #cbb4d4); -fx-background-radius: 15;">
+													<children>
+														<Region
+															style="-fx-background-color: linear-gradient(to top, rgba(0,0,0,0.9), transparent); -fx-background-radius: 15;" />
+														<VBox spacing="5.0" style="-fx-padding: 15;">
+															<Label text="Phim 2" textFill="WHITE">
+																<font>
+																	<Font name="System Bold" size="16.0" />
+																</font>
+															</Label>
+															<Label text="Mô tả 2" textFill="#cccccc"
+																wrapText="true" />
+														</VBox>
+													</children>
+												</StackPane>
+
+												<StackPane alignment="BOTTOM_LEFT"
+													prefHeight="200.0" prefWidth="300.0"
+													style="-fx-background-color: linear-gradient(to bottom right, #ff416c, #ff4b2b); -fx-background-radius: 15;">
+													<children>
+														<Region
+															style="-fx-background-color: linear-gradient(to top, rgba(0,0,0,0.9), transparent); -fx-background-radius: 15;" />
+														<VBox spacing="5.0" style="-fx-padding: 15;">
+															<Label text="Phim 3" textFill="WHITE">
+																<font>
+																	<Font name="System Bold" size="16.0" />
+																</font>
+															</Label>
+															<Label text="Mô tả 3" textFill="#cccccc"
+																wrapText="true" />
+														</VBox>
+													</children>
+												</StackPane>
+											</children>
+										</HBox>
+									</content>
+								</ScrollPane>
+								<HBox alignment="CENTER" spacing="8.0"
+									style="-fx-padding: 10 0 0 0;">
+									<children>
+										<Region fx:id="dot1" onMouseClicked="#showMovie1"
+											prefHeight="8.0" prefWidth="25.0"
+											style="-fx-background-color: #E50914; -fx-background-radius: 10; -fx-cursor: hand;" />
+
+										<Region fx:id="dot2" onMouseClicked="#showMovie2"
+											prefHeight="8.0" prefWidth="8.0"
+											style="-fx-background-color: #444444; -fx-background-radius: 10; -fx-cursor: hand;" />
+
+										<Region fx:id="dot3" onMouseClicked="#showMovie3"
+											prefHeight="8.0" prefWidth="8.0"
+											style="-fx-background-color: #444444; -fx-background-radius: 10; -fx-cursor: hand;" />
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+
+						<ScrollPane fitToHeight="true" hbarPolicy="NEVER"
+							style="-fx-background-color: transparent; -fx-background: transparent;"
+							vbarPolicy="NEVER">
+							<content>
+								<HBox spacing="10.0" style="-fx-padding: 5;">
+									<children>
+										<Button text="Hành động" textFill="WHITE"
+											style="-fx-background-color: #E50914; -fx-background-radius: 20; -fx-padding: 8 20; -fx-font-weight: bold; -fx-cursor: hand;" />
+
+										<Button text="Hài hước" textFill="#cccccc"
+											style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+										<Button text="Viễn tưởng" textFill="#cccccc"
+											style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+										<Button text="Kinh dị" textFill="#cccccc"
+											style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+										<Button text="Tình cảm" textFill="#cccccc"
+											style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+										<Button text="Hoạt hình" textFill="#cccccc"
+											style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+									</children>
+								</HBox>
+							</content>
+						</ScrollPane>
+
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</center>
+
+	<bottom>
+		<HBox alignment="CENTER" spacing="50.0"
+			style="-fx-background-color: #000000; -fx-padding: 15 0; -fx-border-color: #333; -fx-border-width: 1 0 0 0;">
+			<children>
+				<VBox alignment="CENTER" spacing="5.0"
+					style="-fx-cursor: hand;">
+					<Label text="🏠" textFill="#E50914"
+						style="-fx-font-size: 20px;" />
+					<Label text="Trang chủ" textFill="#E50914">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+
+				<VBox onMouseClicked="#goToMovies" alignment="CENTER"
+					spacing="5.0" style="-fx-cursor: hand;">
+					<Label text="🎬" textFill="#666666"
+						style="-fx-font-size: 20px;" />
+					<Label text="Phim" textFill="#666666">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+
+				<VBox onMouseClicked="#goToProfile" alignment="CENTER"
+					spacing="5.0" style="-fx-cursor: hand;">
+					<Label text="👤" textFill="#666666"
+						style="-fx-font-size: 20px;" />
+					<Label text="Cá nhân" textFill="#666666">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+
+				<VBox onMouseClicked="#goToMyTickets" alignment="CENTER"
+					spacing="5.0" style="-fx-cursor: hand;">
+					<Label text="🎟️" textFill="#666666"
+						style="-fx-font-size: 20px;" />
+					<Label text="Vé của tôi" textFill="#666666">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+			</children>
+		</HBox>
+	</bottom>
+
+</BorderPane>

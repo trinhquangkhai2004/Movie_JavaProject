@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0"
+	style="-fx-background-color: #121212;"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="RapChieuPhim.MovieController">
+
+	<top>
+		<VBox spacing="15.0" style="-fx-padding: 20 20 10 20;">
+			<children>
+				<HBox alignment="CENTER_LEFT" spacing="15.0">
+					<children>
+						<Button text="❮" textFill="WHITE"
+							style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-cursor: hand;"
+							onAction="#goHome" />
+						<Region HBox.hgrow="ALWAYS" />
+						<Label text="Danh Sách Phim" textFill="WHITE">
+							<font>
+								<Font name="System Bold" size="18.0" />
+							</font>
+						</Label>
+						<Region HBox.hgrow="ALWAYS" />
+						<Button text="🔖" textFill="WHITE"
+							style="-fx-background-color: transparent; -fx-font-size: 18px;" />
+					</children>
+				</HBox>
+
+				<HBox alignment="CENTER_LEFT"
+					style="-fx-background-color: #2B2B2B; -fx-background-radius: 10; -fx-padding: 8 15;">
+					<children>
+						<Label text="🔍" textFill="#888888"
+							style="-fx-padding: 0 10 0 0;" />
+						<TextField promptText="Search by title, actor..."
+							style="-fx-background-color: transparent; -fx-text-fill: white;"
+							HBox.hgrow="ALWAYS" />
+					</children>
+				</HBox>
+
+				<HBox spacing="10.0">
+					<children>
+						<Button text="Phim Đang Chiếu" textFill="WHITE"
+							style="-fx-background-color: #E50914; -fx-background-radius: 20; -fx-padding: 8 20; -fx-font-weight: bold; -fx-cursor: hand;" />
+						<Button text="Sắp Chiếu" textFill="#AAAAAA"
+							style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+						<Button text="Thể loại" textFill="#AAAAAA"
+							style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+						<Button text="Đánh Giá" textFill="#AAAAAA"
+							style="-fx-background-color: #2B2B2B; -fx-background-radius: 20; -fx-padding: 8 20; -fx-cursor: hand;" />
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</top>
+
+	<center>
+		<ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+			style="-fx-background: #121212; -fx-background-color: transparent;"
+			vbarPolicy="NEVER">
+			<content>
+				<TilePane hgap="20.0" vgap="20.0" prefColumns="4"
+					style="-fx-padding: 20; -fx-background-color: #121212;">
+					<children>
+
+						<VBox onMouseClicked="#bookMovieA" spacing="8.0"
+							style="-fx-cursor: hand;">
+							<StackPane prefHeight="240.0" prefWidth="160.0"
+								style="-fx-background-color: linear-gradient(to bottom, #3E2723, #000000); -fx-background-radius: 12;">
+								<Label text="MovieA" textFill="WHITE" opacity="0.5"
+									style="-fx-font-weight: bold; -fx-font-size: 24px;" />
+							</StackPane>
+							<Label fx:id="movieTitle" text="Dune: Part Two" textFill="WHITE"
+								style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+							<Label text="⭐ 8.5" textFill="#FFD700"
+								style="-fx-font-size: 12px;" />
+						</VBox>
+
+						<VBox onMouseClicked="#bookMovie" spacing="8.0"
+							style="-fx-cursor: hand;">
+							<StackPane prefHeight="240.0" prefWidth="160.0"
+								style="-fx-background-color: linear-gradient(to bottom, #F57F17, #3E2723); -fx-background-radius: 12;">
+								<Label text="MAD MAX" textFill="WHITE" opacity="0.5"
+									style="-fx-font-weight: bold; -fx-font-size: 24px;" />
+							</StackPane>
+							<Label text="Furiosa: Mad Max" textFill="WHITE"
+								style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+							<Label text="⭐ 7.7" textFill="#FFD700"
+								style="-fx-font-size: 12px;" />
+						</VBox>
+
+						<VBox onMouseClicked="#bookMovie" spacing="8.0"
+							style="-fx-cursor: hand;">
+							<StackPane prefHeight="240.0" prefWidth="160.0"
+								style="-fx-background-color: linear-gradient(to bottom, #EEEEEE, #424242); -fx-background-radius: 12;">
+								<Label text="APES" textFill="BLACK" opacity="0.3"
+									style="-fx-font-weight: bold; -fx-font-size: 24px;" />
+							</StackPane>
+							<Label text="Kingdom of Apes" textFill="WHITE"
+								style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+							<Label text="⭐ 7.2" textFill="#FFD700"
+								style="-fx-font-size: 12px;" />
+						</VBox>
+
+						<VBox onMouseClicked="#bookMovie" spacing="8.0"
+							style="-fx-cursor: hand;">
+							<StackPane prefHeight="240.0" prefWidth="160.0"
+								style="-fx-background-color: linear-gradient(to bottom, #00BCD4, #01579B); -fx-background-radius: 12;">
+								<Label text="KONG" textFill="WHITE" opacity="0.5"
+									style="-fx-font-weight: bold; -fx-font-size: 24px;" />
+							</StackPane>
+							<Label text="Godzilla x Kong" textFill="WHITE"
+								style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+							<Label text="⭐ 7.2" textFill="#FFD700"
+								style="-fx-font-size: 12px;" />
+						</VBox>
+
+						<VBox onMouseClicked="#bookMovie" spacing="8.0"
+							style="-fx-cursor: hand;">
+							<StackPane prefHeight="240.0" prefWidth="160.0"
+								style="-fx-background-color: linear-gradient(to bottom, #66BB6A, #1B5E20); -fx-background-radius: 12;">
+								<Label text="BOMB" textFill="WHITE" opacity="0.5"
+									style="-fx-font-weight: bold; -fx-font-size: 24px;" />
+							</StackPane>
+							<Label text="Oppenheimer" textFill="WHITE"
+								style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+							<Label text="⭐ 8.1" textFill="#FFD700"
+								style="-fx-font-size: 12px;" />
+						</VBox>
+
+						<VBox onMouseClicked="#bookMovie" spacing="8.0"
+							style="-fx-cursor: hand;">
+							<StackPane prefHeight="240.0" prefWidth="160.0"
+								style="-fx-background-color: linear-gradient(to bottom, #26C6DA, #006064); -fx-background-radius: 12;">
+								<Label text="STUNT" textFill="WHITE" opacity="0.5"
+									style="-fx-font-weight: bold; -fx-font-size: 24px;" />
+							</StackPane>
+							<Label text="The Fall Guy" textFill="WHITE"
+								style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+							<Label text="⭐ 7.3" textFill="#FFD700"
+								style="-fx-font-size: 12px;" />
+						</VBox>
+
+					</children>
+				</TilePane>
+			</content>
+		</ScrollPane>
+	</center>
+
+	<bottom>
+		<HBox alignment="CENTER" spacing="50.0"
+			style="-fx-background-color: #000000; -fx-padding: 15 0; -fx-border-color: #333; -fx-border-width: 1 0 0 0;">
+			<children>
+				<VBox alignment="CENTER" spacing="5.0"
+					style="-fx-cursor: hand;" onMouseClicked="#goHome">
+					<Label text="🏠" textFill="#666666"
+						style="-fx-font-size: 20px;" />
+					<Label text="Trang chủ" textFill="#666666">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+
+				<VBox onMouseClicked="#goToMovies" alignment="CENTER" spacing="5.0"
+					style="-fx-cursor: hand;">
+					<Label text="🎬" textFill="#E50914"
+						style="-fx-font-size: 20px;" />
+					<Label text="Phim" textFill="#E50914">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+
+				<VBox onMouseClicked="#goToProfile" alignment="CENTER" spacing="5.0"
+					style="-fx-cursor: hand;">
+					<Label text="👤" textFill="#666666"
+						style="-fx-font-size: 20px;" />
+					<Label text="Cá nhân" textFill="#666666">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+
+				<VBox onMouseClicked="#goToMyTickets" alignment="CENTER"
+					spacing="5.0" style="-fx-cursor: hand;">
+					<Label text="🎟️" textFill="#666666"
+						style="-fx-font-size: 20px;" />
+					<Label text="Vé của tôi" textFill="#666666">
+						<font>
+							<Font size="10.0" />
+						</font>
+					</Label>
+				</VBox>
+			</children>
+		</HBox>
+	</bottom>
+
+</BorderPane>
