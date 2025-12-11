@@ -21,7 +21,7 @@ public class UserDAO {
 			pstmt.setString(2, user.getFullname());
 			pstmt.setString(3, user.getUsername());
 			pstmt.setString(4, user.getEmail());
-			pstmt.setString(5, user.getPassword());
+			pstmt.setString(5, PasswordEncoder.hash(user.getPassword()));
 			pstmt.setString(6, user.getPhone());
 
 			return pstmt.executeUpdate();
@@ -81,14 +81,12 @@ public class UserDAO {
 			throw e;
 		}
 	}
-	public void changePassword(String newPass) {
-		String sql = "UPDATE users SET password = ? WHERE username = ? OR email = ?";
-		String EoU = SessionContext.getInstance().getlogged();
+	public void changePassword(String newPass, UUID userId) {
+		String sql = "UPDATE users SET password = ? WHERE users.id = UUID_TO_BIN(?)";
 		try (Connection connection = DBConnection.getConnection();
                 PreparedStatement ps = connection.prepareStatement(sql)){
             ps.setString(1, PasswordEncoder.hash(newPass));
-            ps.setString(2, EoU);
-            ps.setString(3, EoU);
+            ps.setString(2, userId.toString());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			System.err.println("ERROR WHEN CHANGE PASSWORD: " + e.getMessage());

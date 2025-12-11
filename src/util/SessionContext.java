@@ -1,7 +1,9 @@
 package util;
 
+import java.util.UUID;
 
 public class SessionContext {
+	private static UUID loggedUserId;
 	private static String loggedEmailOrUsername;
 	private static int selectedThearterId = 1;
 	private static int selectedHall = 1;
@@ -18,7 +20,15 @@ public class SessionContext {
 		return ins;
 	}
 
-	public static void setlogged(String EoU) {
+	public UUID getLoggedUserId() {
+		return loggedUserId;
+	}
+
+	public void setLoggedUserId(UUID userId) {
+		loggedUserId = userId;
+	}
+
+	public void setlogged(String EoU) {
 		loggedEmailOrUsername = EoU;
 	}
 
@@ -58,6 +68,7 @@ public class SessionContext {
 		selectedShowtimeId = showtimeId;
 	}
 	public void quitSession() {
+		loggedUserId = null;
 		loggedEmailOrUsername = null;
 		selectedThearterId = 1;
 		selectedHall = 0;

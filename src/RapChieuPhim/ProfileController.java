@@ -52,14 +52,31 @@ public class ProfileController extends BaseController{
     @FXML
     public void handleSave() throws SQLException {
         // Logic lưu thông tin (Giả lập)
+    		String oldPass = txtOldPass.getText();
         String newPass = txtNewPass.getText();
         String confirmPass = txtConfirmPass.getText();
 
-        if (!newPass.isEmpty() && !PasswordEncoder.matches(newPass, confirmPass)) {
-            showAlert("Lỗi", "Mật khẩu xác nhận không khớp!");
-            return;
-        }
-        dao.changePassword(newPass);
+        // Check old password
+		if (!PasswordEncoder.matches(oldPass, user.getPassword())) {
+			showAlert("Lỗi", "Mật khẩu cũ không đúng!");
+			return;
+		}
+
+		// Check new password và confirm password
+		if (newPass.isEmpty()) {
+			showAlert("Lỗi", "Mật khẩu mới không được để trống!");
+			return;
+		}
+		if (confirmPass.isEmpty()) {
+			showAlert("Lỗi", "Vui lòng xác nhận mật khẩu mới!");
+			return;
+		}
+		if (!newPass.equals(confirmPass)) {
+			showAlert("Lỗi", "Mật khẩu mới và xác nhận mật khẩu không khớp!");
+			return;
+		}
+
+        dao.changePassword(newPass, user.getId());
         showAlert("Thành công", "Đã cập nhật hồ sơ của bạn!");
 
         // Reset ô mật khẩu
@@ -71,7 +88,8 @@ public class ProfileController extends BaseController{
     @FXML
     public void handleLogout(ActionEvent event) {
         // Quay về trang Login
-        switchScene(event, "LoginView.fxml");
+    		SessionContext.getInstance().quitSession();
+        switchScene(event, "Login.fxml");
     }
 
     @FXML

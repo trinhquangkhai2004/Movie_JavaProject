@@ -12,8 +12,6 @@ module Movie_JavaProject {
 	requires java.sql;
 
 	opens RapChieuPhim to javafx.fxml;
-
-    // 3. Mở cửa cho JavaFX Graphics (để chạy file Main)
-    // ĐÂY LÀ DÒNG BẠN ĐANG THIẾU
+	
     exports RapChieuPhim;
 }

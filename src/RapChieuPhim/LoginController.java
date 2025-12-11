@@ -33,7 +33,8 @@ public class LoginController {
 
         if (dao.checkExistUser(username, password)) {
             System.out.println("Đăng nhập thành công!");
-            SessionContext.setlogged(username);
+            SessionContext.getInstance().setlogged(username);
+            SessionContext.getInstance().setLoggedUserId(dao.getUserInfo(username).getId());
             System.out.println("Người dùng đã đăng nhập: " + SessionContext.getInstance().getlogged());
             switchScene("HomeView.fxml");
         } else {
